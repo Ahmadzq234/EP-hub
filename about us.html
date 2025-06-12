@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>About Us | EP-Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-size: 0.98em;
+            font-family: 'PT Sans Caption', 'Concert One', sans-serif;
+            background: #fff;
+        }
+        .header {
+            background-color: #f7eaff;
+            color: #8920a6;
+            padding: 22px 32px 22px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            box-shadow: 0 2px 16px rgba(212, 84, 248, 0.08);
+        }
+        .header-title-link {
+            text-decoration: none;
+            margin-right: auto;
+        }
+        .title-box {
+            display: inline-block;
+            background-color: #d8d8ff;
+            color: #8920a6;
+            padding: 12px 36px;
+            border-radius: 16px;
+            font-size: 2em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-family: system-ui, 'Concert One', cursive, sans-serif;
+            box-shadow: 0 2px 16px rgba(212, 84, 248, 0.10);
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+        .title-box:hover {
+            background-color: #e7d8ff;
+            color: #d454f8;
+            box-shadow: 0 4px 24px rgba(212, 84, 248, 0.18);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .nav-links a {
+            color: #8920a6;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: background 0.3s, color 0.3s;
+            font-weight: 600;
+        }
+        .nav-links a:hover {
+            background-color: #d454f8;
+            color: #fff;
+        }
+        .start-btn {
+            background-color: #ffff3b;
+            color: #8920a6;
+            border: none;
+            border-radius: 10px;
+            padding: 14px 36px;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-left: 18px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+            font-family: 'PT Sans Caption', 'Concert One', sans-serif;
+            box-shadow: 0 4px 16px rgba(212, 84, 248, 0.10);
+        }
+        .start-btn:hover {
+            background-color: #ffd857;
+            color: #8920a6;
+            box-shadow: 0 6px 24px rgba(212, 84, 248, 0.18);
+        }
+        .landing-section {
+            width: 100vw;
+            max-width: 100vw;
+            margin: 0;
+            background: #fff; /* Changed to white */
+            border-radius: 0 0 40px 40px / 0 0 28px 28px;
+            box-shadow: 0 8px 32px rgba(212, 84, 248, 0.10);
+            overflow: hidden;
+            padding-bottom: 24px;
+            min-height: 260px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: center;
+        }
+        .about-content {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 32px 24px 0 24px;
+        }
+        .about-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #8920a6;
+            margin-bottom: 12px;
+            font-family: 'PT Sans Caption', Arial, Helvetica, sans-serif;
+        }
+        .about-section {
+            font-size: 0.98em;
+            color: #5d2b7c;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        .about-list {
+            margin: 8px 0 12px 18px;
+            padding-left: 0;
+            color: #8920a6;
+            font-size: 0.98em;
+        }
+        .about-list li {
+            margin-bottom: 5px;
+        }
+        .about-subtitle {
+            font-size: 1.05em;
+            font-weight: bold;
+            color: #8920a6;
+            margin-top: 12px;
+            margin-bottom: 6px;
+            font-family: 'PT Sans Caption', Arial, Helvetica, sans-serif;
+        }
+        .about-mission, .about-vision {
+            font-size: 0.98em;
+            color: #5d2b7c;
+            margin-bottom: 7px;
+        }
+        .contact-info {
+            border-top: 1px solid #d8d8ff;
+            margin: 32px 0 0 0;
+            padding: 18px 0 8px 0;
+            text-align: center;
+            font-family: 'PT Sans Caption', 'Concert One', sans-serif;
+            color: #111;
+            font-size: 1.08em;
+            letter-spacing: 0.5px;
+        }
+        @media (max-width: 800px) {
+            .about-content {
+                padding: 18px 6px 0 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="EP-hub.html" class="header-title-link">
+            <span class="title-box">EP Hub</span>
+        </a>
+        <div class="nav-links">
+            <a href="contact us.html">Contact us</a>
+            <button class="start-btn">Start Now</button>
+        </div>
+    </div>
+    <div class="landing-section">
+        <div class="about-content">
+            <div class="about-title">About Us</div>
+            <div class="about-section">
+                We are a group of professional language instructors with over 10 years of experience in teaching, especially English, at some of the most reputable educational institutions in Egypt.<br><br>
+                Throughout our careers, we've seen many learners struggle with the same issues:
+                <ul class="about-list">
+                    <li>Difficulty in finding the right teacher who matches their learning style.</li>
+                    <li>Limited availability that doesn’t fit the student’s schedule.</li>
+                    <li>Big variation in prices, often without clarity on value for money.</li>
+                </ul>
+                That’s why we created this platform — to offer a practical solution to these challenges.
+            </div>
+            <div class="about-subtitle">What We Offer:</div>
+            <ul class="about-list">
+                <li>A wide selection of teachers with different price ranges to suit all budgets</li>
+                <li>24/7 teacher availability to fit your schedule</li>
+                <li>The freedom to choose a teacher based on your needs, preferences, and goals</li>
+                <li>A free trial session for every new student</li>
+                <li>A refund guarantee if you’re not satisfied after the first session</li>
+                <li>Continuous follow-up and progress tracking to keep you on track</li>
+            </ul>
+            <div class="about-section">
+                We’re not just here to teach — we’re here to guide you, support you, and make sure your journey in learning English is effective, flexible, and enjoyable.
+            </div>
+            <div class="about-subtitle">Our Mission</div>
+            <div class="about-mission">
+                To connect every learner with the right teacher — in the right way, at the right time, and at the right price.
+            </div>
+            <div class="about-subtitle">Our Vision</div>
+            <div class="about-vision">
+                To become the go-to platform for smart, flexible, and personalized English learning experiences.
+            </div>
+            <div class="contact-info">
+                <hr style="border: none; border-top: 1px solid #d8d8ff; margin-bottom: 16px;">
+                <div style="display: flex; justify-content: center; gap: 40px; align-items: center; flex-wrap: wrap;">
+                    <span>call us: 01020489404</span>
+                    <span>email:</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
