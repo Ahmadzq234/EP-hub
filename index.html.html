@@ -1,0 +1,413 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>EP-Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'PT Sans Caption', 'Concert One', sans-serif;
+            background: #fff;
+            padding-top: 56px; /* Adjust for new header height */
+            overflow-x: hidden;
+        }
+        .header {
+            background-color: #f7eaff;
+            color: #8920a6;
+            padding: 10px 20px 10px 20px; /* Smaller header */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 16px rgba(212, 84, 248, 0.08);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            max-width: 100vw;
+            margin: 0;
+            z-index: 1000;
+        }
+        .header-title-link {
+            text-decoration: none;
+        }
+        .title-box {
+            display: inline-block;
+            background-color: #d8d8ff;
+            color: #8920a6;
+            padding: 10px 32px; /* Smaller title box */
+            border-radius: 16px;
+            font-size: 2em;     /* Smaller font */
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-family: system-ui, 'Concert One', cursive, sans-serif;
+            box-shadow: 0 2px 16px rgba(212, 84, 248, 0.10);
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+        .title-box:hover {
+            background-color: #e7d8ff;
+            color: #d454f8;
+            box-shadow: 0 4px 24px rgba(212, 84, 248, 0.18);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            margin-left: 30px; /* Move links to the left */
+            margin-right: auto; /* Push links to the left */
+        }
+        .nav-links a {
+            color: #8920a6;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 18px;
+            border-radius: 8px;
+            transition: background 0.3s, color 0.3s;
+            font-weight: 600;
+        }
+        .nav-links a:hover {
+            background-color: #d454f8;
+            color: #fff;
+        }
+        .start-btn {
+            background-color: #ffff3b;
+            color: #8920a6;
+            border: none;
+            border-radius: 50px;
+            padding: 28px 80px;      /* Bigger padding for larger button */
+            font-size: 2em;          /* Bigger font size */
+            font-weight: bold;
+            margin-left: 0;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+            font-family: 'PT Sans Caption', 'Concert One', sans-serif;
+            box-shadow: 0 4px 16px rgba(212, 84, 248, 0.10);
+            width: auto;
+            min-width: 0;
+            max-width: none;
+        }
+        .start-btn:hover {
+            background-color: #ffd857;
+            color: #8920a6;
+            box-shadow: 0 6px 24px rgba(212, 84, 248, 0.18);
+        }
+        .teach-btn {
+            background-color: #ffd580; /* Light orange */
+            color: #8920a6;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 50px;
+            font-size: 1em;
+            font-weight: bold;
+            margin-left: 38px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+            font-family: 'PT Sans Caption', 'Concert One', sans-serif;
+            box-shadow: 0 4px 16px rgba(212, 84, 248, 0.10);
+        }
+        .teach-btn:hover {
+            background-color: #ffc04d;
+            color: #fff;
+        }
+        .landing-section {
+            width: 100vw;
+            max-width: 100vw;
+            margin: 0;
+            background: #f7eaff;
+            border-radius: 0 0 60px 60px / 0 0 40px 40px;
+            box-shadow: 0 8px 32px rgba(212, 84, 248, 0.10);
+            overflow: hidden;
+            padding-bottom: 40px;
+        }
+        .landing-container {
+            display: flex;
+            min-height: 480px;
+            background: transparent;
+            border-radius: 0 0 60px 60px / 0 0 40px 40px;
+            width: 100%;
+        }
+        .landing-left {
+            flex: 1;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 1.05em;
+        }
+        .landing-left h1 {
+            font-size: 1.7em;
+            margin-bottom: 18px;
+            color: #8920a6;
+        }
+        .landing-left h2 {
+            font-size: 1.1em;
+            font-weight: 400;
+            margin-bottom: 18px;
+            color: #5d2b7c;
+        }
+        .landing-list {
+            margin-top: 10px;
+            margin-bottom: 18px;
+            padding-left: 20px;
+            font-size: 1em;
+        }
+        .center-btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        .landing-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px 0 0;
+        }
+        .landing-right img {
+            max-width: 95%;
+            max-height: 350px;
+            border-radius: 24px;
+            box-shadow: 0 4px 24px rgba(212, 84, 248, 0.10);
+            object-fit: contain;
+            background: #fff;
+        }
+        /* Teacher grid styles */
+        .teachers-section {
+            width: 100vw;
+            max-width: 100vw;
+            background: #fff;
+            padding: 60px 0 60px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 36px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .teacher-card {
+            background: #f7eaff;
+            border-radius: 24px;
+            box-shadow: 0 4px 24px rgba(212, 84, 248, 0.10);
+            padding: 28px 18px 24px 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            transition: box-shadow 0.3s, transform 0.3s;
+            min-height: 390px;
+        }
+        .teacher-card:hover {
+            box-shadow: 0 8px 32px rgba(212, 84, 248, 0.18);
+            transform: translateY(-6px) scale(1.03);
+        }
+        .teacher-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: #d8d8ff;
+            margin-bottom: 18px;
+            object-fit: cover;
+            box-shadow: 0 2px 12px rgba(212, 84, 248, 0.10);
+        }
+        .teacher-name {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #8920a6;
+            margin-bottom: 8px;
+        }
+        .teacher-exp, .teacher-cert {
+            font-size: 1em;
+            color: #5d2b7c;
+            margin-bottom: 6px;
+        }
+        .teacher-space {
+            min-height: 32px;
+            margin-bottom: 10px;
+        }
+        .check-btn {
+            background-color: #d454f8;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 28px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+            margin-top: 10px;
+            box-shadow: 0 2px 8px rgba(212, 84, 248, 0.10);
+        }
+        .check-btn:hover {
+            background-color: #ffff3b;
+            color: #8920a6;
+            box-shadow: 0 4px 16px rgba(212, 84, 248, 0.18);
+        }
+        @media (max-width: 1100px) {
+            .teachers-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 700px) {
+            .teachers-grid {
+                grid-template-columns: 1fr;
+            }
+            .landing-container {
+                flex-direction: column;
+            }
+            .landing-left, .landing-right {
+                padding: 30px 10px;
+            }
+        }
+        .self-study-link {
+            margin-left: 38px;
+            font-size: 1em;
+            font-family: 'PT Sans Caption', 'Concert One', sans-serif;
+            color: #8920a6;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 28px;
+            border-radius: 50px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .self-study-link:hover {
+            background: #ffd580;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="header-title-link">
+            <span class="title-box">EP Hub</span>
+        </a>
+        <div class="nav-links">
+            <a href="about us.html">About us</a>
+            <a href="contact us.html">Contact us</a>
+        </div>
+        <a href="#" class="self-study-link">
+            Self Study
+        </a>
+        <button class="teach-btn">Teach with us</button>
+    </div>
+    <div class="landing-section">
+        <div class="landing-container">
+            <div class="landing-left">
+                <h1>Welcome to EP-hub – Your Personalized English Learning Journey Starts Here!</h1>
+                <h2>
+                    Find Your Perfect English Teacher — Anytime, Anywhere!<br>
+                    At EP-hub, you choose the teacher that fits your schedule, budget, and goals.<br>
+                    From affordable sessions to expert mentors — available 24/7.
+                    <br><br>
+                    🎁 Free Trial<br>
+                    💸 Refund Guarantee<br>
+                    📈 Progress Follow-up
+            
+            </div>
+            <div class="landing-right">
+                <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=600&q=80" alt="Welcome to EP-hub">
+            </div>
+        </div>
+        <div class="center-btn">
+            <button class="start-btn">Start Now</button>
+        </div>
+    </div>
+    <div class="teachers-section">
+        <div class="teachers-grid">
+            <!-- Teacher Card 1 -->
+            <a href="teacher1.html" class="teacher-card">
+                <img src="teacher1.jpg" alt="Teacher 1" class="teacher-img">
+                <div class="teacher-name">Teacher Name 1</div>
+                <div class="teacher-exp">Experience: </div>
+                <div class="teacher-cert">Certificates: </div>
+                <div class="teacher-space"></div>
+                <button class="check-btn">Check</button>
+            </a>
+            <!-- Teacher Card 2 -->
+            <a href="teacher2.html" class="teacher-card">
+                <img src="teacher2.jpg" alt="Teacher 2" class="teacher-img">
+                <div class="teacher-name">Teacher Name 2</div>
+                <div class="teacher-exp">Experience: </div>
+                <div class="teacher-cert">Certificates: </div>
+                <div class="teacher-space"></div>
+                <button class="check-btn">Check</button>
+            </a>
+            <!-- Teacher Card 3 -->
+            <a href="teacher3.html" class="teacher-card">
+                <img src="teacher3.jpg" alt="Teacher 3" class="teacher-img">
+                <div class="teacher-name">Teacher Name 3</div>
+                <div class="teacher-exp">Experience: </div>
+                <div class="teacher-cert">Certificates: </div>
+                <div class="teacher-space"></div>
+                <button class="check-btn">Check</button>
+            </a>
+            <!-- Teacher Card 4 -->
+            <a href="teacher4.html" class="teacher-card">
+                <img src="teacher4.jpg" alt="Teacher 4" class="teacher-img">
+                <div class="teacher-name">Teacher Name 4</div>
+                <div class="teacher-exp">Experience: </div>
+                <div class="teacher-cert">Certificates: </div>
+                <div class="teacher-space"></div>
+                <button class="check-btn">Check</button>
+            </a>
+            <!-- Teacher Card 5 -->
+            <a href="teacher5.html" class="teacher-card">
+                <img src="teacher5.jpg" alt="Teacher 5" class="teacher-img">
+                <div class="teacher-name">Teacher Name 5</div>
+                <div class="teacher-exp">Experience: </div>
+                <div class="teacher-cert">Certificates: </div>
+                <div class="teacher-space"></div>
+                <button class="check-btn">Check</button>
+            </a>
+            <!-- Teacher Card 6 -->
+            <a href="teacher6.html" class="teacher-card">
+                <img src="teacher6.jpg" alt="Teacher 6" class="teacher-img">
+                <div class="teacher-name">Teacher Name 6</div>
+                <div class="teacher-exp">Experience: </div>
+                <div class="teacher-cert">Certificates: </div>
+                <div class="teacher-space"></div>
+                <button class="check-btn">Check</button>
+            </a>
+            <!-- Teacher Card 7 -->
+            <a href="teacher7.html" class="teacher-card">
+                <img src="teacher7.jpg" alt="Teacher 7" class="teacher-img">
+                <div class="teacher-name">Teacher Name 7</div>
+                <div class="teacher-exp">Experience: </div>
+                <div class="teacher-cert">Certificates: </div>
+                <div class="teacher-space"></div>
+                <button class="check-btn">Check</button>
+            </a>
+            <!-- Teacher Card 8 -->
+            <a href="teacher8.html" class="teacher-card">
+                <img src="teacher8.jpg" alt="Teacher 8" class="teacher-img">
+                <div class="teacher-name">Teacher Name 8</div>
+                <div class="teacher-exp">Experience: </div>
+                <div class="teacher-cert">Certificates: </div>
+                <div class="teacher-space"></div>
+                <button class="check-btn">Check</button>
+            </a>
+            <!-- Teacher Card 9 -->
+            <a href="teacher9.html" class="teacher-card">
+                <img src="teacher9.jpg" alt="Teacher 9" class="teacher-img">
+                <div class="teacher-name">Teacher Name 9</div>
+                <div class="teacher-exp">Experience: </div>
+                <div class="teacher-cert">Certificates: </div>
+                <div class="teacher-space"></div>
+                <button class="check-btn">Check</button>
+            </a>
+        </div>
+    </div>
+    <!-- Teachers section ends here -->
+    <hr style="border: none; border-top: 2px solid #8920a6; margin: 48px 0 0 0;">
+    <footer style="background: #2d1846; color: #fff; padding: 32px 0 24px 0; text-align: center; font-family: 'PT Sans Caption', 'Concert One', sans-serif; font-size: 1.1em;">
+        &copy; 2025 EP-hub. All rights reserved.
+    </footer>
+</body>
+</html>
